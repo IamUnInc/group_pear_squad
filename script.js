@@ -2,7 +2,8 @@ $(document).ready(function () {
 
   fruit.forEach(appendDom);
   priceFlux();
-  $('button').on('click', calculateTotalPrice, calculateAveragePrice);
+  $('button').on('click', calculateTotalPrice);
+  $('button').on('click', calculateAveragePrice);
   userTotal();
 });
 
@@ -96,36 +97,22 @@ function calculateTotalPrice() {
 
 function calculateAveragePrice() {
   var average = $(this).parent().data('average');
-  console.log('average: ', average);
 
   var clicks = $(this).parent().data('clicks');
   clicks++;
   $(this).parent().data('clicks', clicks);
-  console.log('clicks', clicks);
 
   var price = $(this).parent().data('price');
-  console.log('price: ', price);
-
-  // var totalClicks = $(this).parent().data('clicks', clicks);
-  // console.log('totalClicks: ', totalClicks);
 
   var totalFruitPurchased = $(this).parent().data('totalFruitBought');
-  console.log('totalFruitPurchased 0: ', totalFruitPurchased);
-
-  $(this).parent().data('totalFruitBought', totalFruitPurchased);
-
-  var test = $(this).parent().data('totalFruitBought', totalFruitPurchased);
-
-  console.log('totalFruitPurchased 1: ', totalFruitPurchased);
-  console.log('test', $(this).parent().data('totalFruitBought', totalFruitPurchased));
-  console.log('testy', test);
 
   totalFruitPurchased += price;
-  console.log('totalFruitPurchased 2: ', totalFruitPurchased);
+  $(this).parent().data('totalFruitBought', totalFruitPurchased);
+  var overallTotal = $(this).parent().data('totalFruitBought');
 
-  var total = totalFruitPurchased / clicks;
-  console.log('total: ', total);
+  var total = +((overallTotal / clicks).toFixed(2));
+  $(this).next().children().text(total);
 }
 
 
-// setInterval(priceFlux, 3000);
+setInterval(priceFlux, 3000);
