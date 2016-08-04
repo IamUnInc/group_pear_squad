@@ -1,4 +1,4 @@
-#partners: Jackie, Nikc, Jake, Liz. H
+#partners: Jackie, Nick, Jake, Liz. H
 
 # Prime Group jQuery Challenge
 jQuery is great! It allows us to do so many things! You and your group will need to flex everything you know about
