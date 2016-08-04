@@ -1,0 +1,28 @@
+img {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    display: block;
+    padding-bottom: 5px;
+}
+
+.cornucopia {
+    display: block;
+    width: 200px;
+    float: left;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+}
+
+.cornucopia > p {
+    text-align: center;
+}
+
+.totalCash {
+  display: inline-block;
+  margin: 0 auto;
+  float: left;
+}
